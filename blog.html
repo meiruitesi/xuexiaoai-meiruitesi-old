@@ -13,5 +13,30 @@
         $("#content").html(marked(response));
     });
 </script>
+    
+<!-- Gitalk 评论 start  -->
+{% if site.gitalk.enable %}
+<!-- Link Gitalk 的支持文件  -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+    <script type="text/javascript">
+    var gitalk = new Gitalk({
+
+    // gitalk的主要参数
+        clientID: '3dc7066332b6ba869e51',
+        clientSecret: 'c8111212acb81b01407dc4cc9e48dd57503efa90',
+        repo: 'xuexiaoai-meiruitesi',
+        owner: 'meiruitesi',
+        admin: ['meiruitesi'],
+        id: 'blogtalk',
+    
+    });
+    gitalk.render('gitalk-container');
+</script>
+{% endif %}
+<!-- Gitalk end -->
+    
 </body>
 </html>
