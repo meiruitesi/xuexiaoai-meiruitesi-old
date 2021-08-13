@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+<title>2021-8-13 _清晰不见生石花和梅瑞特斯的个人网站</title>
+</head>
+<body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/marked.min.js"></script>
+<div id="content"></div>
+
+<script>
+    $.get('2021-8-13.md', function(response, status, xhr){
+        $("#content").html(marked(response));
+    });
+</script>
+</body>
+</html>
