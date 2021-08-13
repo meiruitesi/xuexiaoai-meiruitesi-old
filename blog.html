@@ -41,5 +41,21 @@
 
 <!-- Gitalk end -->
     
+<div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk@latest/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+    <script type="text/javascript">
+      var gitalk = new Gitalk({
+        clientID: `3dc7066332b6ba869e51`,
+        clientSecret: `2be1929646355f2f2134832b91d885df3e927b57`,
+        accessToken: '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',
+        repo: `xuexiaoai-meiruitesi`,
+        owner: 'meiruitesi',
+        admin: ['meiruitesi', 'xuexiaoai'],
+        id: 'blogtalk',
+        distractionFreeMode: true
+      });
+      gitalk.render('gitalk-container');
+</script>
 </body>
 </html>
