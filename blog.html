@@ -2,31 +2,37 @@
 <html>
 <head>
 <title>博客 _清晰不见生石花和梅瑞特斯的个人网站</title>
-<link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
+<link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css"> // Vssue 评论系统的样式表
 </head>
 <body>
+
+<h1 style="font-family: '微软雅黑'">清晰不见生石花和梅瑞特斯的个人网站</h1>
+
+<!-- 用markdown写的正文部分的开头 -->
+
 <script src="./js/jquery.js"></script>
 <script src="./js/marked.js"></script>
 <div id="content"></div>
-
 <script>
     $.get('blog.md', function(response, status, xhr){
         $("#content").html(marked(response));
     });
 </script>
-    
 
+<!-- 用markdown写的正文部分的结尾 -->
+
+<!-- Vssue 评论系统的开头 -->
+    
 <div id="vssue"></div>
 
-  <!-- 引入 Vue 完整版 -->
-  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+<!-- 引入 Vue 完整版 -->
+<script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 
-  <!-- 在 Vue 之后引入 Vssue -->
-  <!-- Vssue Github 版  -->
-  <script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
+<!-- 在 Vue 之后引入 Vssue Github 版  -->
+<script src="https://unpkg.com/vssue/dist/vssue.github.min.js"></script>
     
 <!-- 对于 Vue 完整版，可以使用模板（template） -->
-  <script>
+<script>
     new Vue({
       el: '#vssue',
 
@@ -34,16 +40,18 @@
         title: 'Vssue Dev',
 
         options: {
-          owner: 'meiruitesi',
-          repo: 'xuexiaoai-meiruitesi',
-          clientId: '3dc7066332b6ba869e51',
-          clientSecret: '2be1929646355f2f2134832b91d885df3e927b57', // 只有在使用某些平台时需要
+          owner: 'meiruitesi', // 你的Github用户名
+          repo: 'xuexiaoai-meiruitesi', // 你的Github仓库名
+          clientId: '3dc7066332b6ba869e51', // 你的评论应用的Client ID
+          clientSecret: '2be1929646355f2f2134832b91d885df3e927b57', // 你的评论应用的Client secrets
         },
       },
 
       template: `<vssue :title="title" :options="options"></vssue>`,
     })
-  </script>
-    
+</script>
+
+<!-- Vssue 评论系统的结尾 -->
+
 </body>
 </html>
